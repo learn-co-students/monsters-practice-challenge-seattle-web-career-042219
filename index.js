@@ -1,12 +1,12 @@
-var pageNumber = 1
-
 document.addEventListener("DOMContentLoaded", () => {
   main()
+  console.log(pageNumber)
 })
 
+var pageNumber = 21
 
 function main() {
-  loadMonsters()
+  loadMonsters(pageNumber)
   handleScroll()
   handleForm()
 }
@@ -47,16 +47,17 @@ function addNewMonster(ev, name, age, description) {
     body: JSON.stringify({name: name, age: age, description: description})
   })
   .then(res => res.json())
-  .then(loadMonsters())
+  .then(json => displayMonster(json))
 }
 
 function loadMonsters(pageNumber){
   return fetch(`http://localhost:3000/monsters?_limit=50&_page=${pageNumber}`)
   .then(res => res.json())
-  .then(json=>displayMonsters(json))
+  .then(json => displayMonsters(json))
 }
 
 function displayMonsters(json) {
+  clearMonsters
   json.forEach(function(monster){
       displayMonster(monster)
   })
@@ -65,7 +66,7 @@ function displayMonsters(json) {
 function displayMonster(monster) {
   const monstersContainer= document.getElementById('monster-container');
   const monsterDiv= document.createElement('div')
-  monstersContainer.appendChild(monsterDiv)
+
   const h2 = document.createElement('h2')
   h2.textContent = monster.name;
   monsterDiv.appendChild(h2);
@@ -75,6 +76,7 @@ function displayMonster(monster) {
   const p = document.createElement('p')
   p.textContent = monster.description;
   monsterDiv.appendChild(p);
+  monstersContainer.appendChild(monsterDiv)
 }
 
 function handleScroll(){
@@ -93,7 +95,7 @@ function handleScroll(){
 
 function scrollBack(ev) {
   if (pageNumber === 1) {
-    loadMonsters(pageNumber)
+    return
   } else {
     pageNumber--
     clearMonsters()
@@ -111,5 +113,5 @@ function clearMonsters() {
   const monsterContainer = document.getElementById("monster-container");
   while (monsterContainer.firstChild) {
     monsterContainer.removeChild(monsterContainer.firstChild);
-}
+  }
 }
