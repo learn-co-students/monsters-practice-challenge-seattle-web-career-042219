@@ -1,6 +1,6 @@
 const BASE_URL = 'http://localhost:3000/monsters'
 
-let page = 21
+let page = 1
 
 document.addEventListener('DOMContentLoaded', () => {
 	main()
