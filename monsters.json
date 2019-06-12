@@ -6005,6 +6005,56 @@
       "age": 13,
       "description": "131313",
       "id": 1001
+    },
+    {
+      "name": "",
+      "age": null,
+      "description": "",
+      "id": 1002
+    },
+    {
+      "name": "",
+      "age": null,
+      "description": "",
+      "id": 1003
+    },
+    {
+      "name": "",
+      "age": null,
+      "description": "",
+      "id": 1004
+    },
+    {
+      "newMonster": {
+        "name": "mean",
+        "age": "24",
+        "desc": "really mean monster"
+      },
+      "id": 1005
+    },
+    {
+      "newMonster": {
+        "name": "number one",
+        "age": "1",
+        "desc": "champion"
+      },
+      "id": 1006
+    },
+    {
+      "newMonster": {
+        "name": "number one",
+        "age": "1",
+        "desc": "champion"
+      },
+      "id": 1007
+    },
+    {
+      "newMonster": {
+        "name": "hi",
+        "age": "4",
+        "desc": "wahoo"
+      },
+      "id": 1008
     }
   ]
 }
