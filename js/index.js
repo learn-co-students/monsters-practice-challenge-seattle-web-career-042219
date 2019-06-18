@@ -29,7 +29,7 @@ function addForm() {
   let descriptionInput = document.createElement("input");
   descriptionInput.setAttribute("id", "monster-description-input");
   descriptionInput.setAttribute("type", "text");
-  descriptionInput.setAttribute("placeHolder", "descriptiuon...");
+  descriptionInput.setAttribute("placeHolder", "description...");
 
   let submit = document.createElement("input");
   submit.setAttribute("type", "submit");
